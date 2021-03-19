@@ -25,12 +25,35 @@
         width: 100%;
       }
       
-      .flex-column {
+      .flex__column {
         display: flex;
         flex-direction: column;
       }
       
-      .flex-center {
+      .flex__center {
         justify-content: center;
         align-items: center;
       }
+
+      .title__item {
+          display:block;
+          font-size: 2rem;
+          font-weight: bold;
+          padding: 2rem;
+      }
+
+    #username {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    #password {
+        font-size: 1.5rem;
+    }
+
+    .logo {
+        display:flex;
+        flex-direction: row-reverse;
+        height: auto;
+        width: auto; 
+    }
