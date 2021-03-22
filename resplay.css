@@ -1,0 +1,26 @@
+.choice__container {
+  border-style: solid;
+  border-color: rgb(75, 82, 81);
+  display: flex;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  }
+  
+  .choice__prefix {
+    background-color: #6aa300;
+    color: white;
+    font-size: 1.5rem;
+    padding: 15px;
+  }
+  
+  .choice__text {
+    color: #6aa300;
+    display: block;
+    font-size: 1.5rem;
+    padding: 15px 32px;
+    text-align: center;
+    margin: 4px 2px;
+    max-width: 500px;
+    width: 100%;
+  }
