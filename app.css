@@ -59,6 +59,7 @@
     }
 
     .button {
+        border: solid;
         color: #6aa300;
         cursor: pointer;
         display: block;
