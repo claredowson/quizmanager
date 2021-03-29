@@ -19,6 +19,7 @@
             <div>
                 <a href="resview.html">Play a Quiz</a>
                 <a href="viewselection.html">View a Quiz</a>
+                <a href="adminedit.html">Add a Question</a>
                 <a href="adminedit.html">Edit a Question</a>
                 <a href="admindelete.html">Delete a Question</a>
                 <a href="index.html">Back to login page</a>
