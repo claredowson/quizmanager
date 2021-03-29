@@ -1,7 +1,7 @@
 .choice__container {
   border-style: solid;
   display: flex;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-bottom: 0.5rem;
   width: 100%;
   }
@@ -10,17 +10,36 @@
     background-color: #6aa300;
     border-right: solid black;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     padding: 15px;
   }
   
   .choice__text {
     color: #6aa300;
     display: block;
+    font-size: 1.25rem;
+    padding: 15px 32px;
+    margin: 4px 2px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .choice__options {
+    color: black;
+    display: block;
     font-size: 1.5rem;
     padding: 15px 32px;
     text-align: center;
     margin: 4px 2px;
     max-width: 500px;
-    width: 100%;
+    width: 100%; 
+  }
+
+  .question {
+    color: black;
+    display: block;
+    font-size: 1.25rem;
+    font-weight: bold;
+    max-width: 500px;
+    width: 100%; 
   }

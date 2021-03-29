@@ -49,10 +49,16 @@
 $db = pg_connect("host=localhost port=5432 dbname=claretest");
 $result = pg_query($db,"SELECT * FROM quiz");
 echo "<table>";
+echo "<th scope='col' class='choice__options'>Question</th>";
 while($row=pg_fetch_assoc($result)){echo "<tr>";
-echo "<td align='center' width='300'>" . $row['question'] . "</td>";
-echo "<td align='center' width='200'>" . $row['choice_1'] . "</td>";
-echo "<td align='center' width='200'>" . $row['choice_2'] . "</td>";
-echo "<td align='center' width='200'>" . $row['choice_3'] . "</td>";
-echo "<td align='center' width='200'>" . $row['choice_4'] . "</td>";
+echo "<td align='left' width='100'  class='question'>" . $row['question'] . "</td>";
+echo "<th scope='col' class='choice__prefix'>A</th>";
+echo "<td align='left' class='choice__text' width='100'>" . $row['choice_1'] . "</td>";
+echo "<th scope='col' class='choice__prefix'>B</th>";
+echo "<td align='left' class='choice__text' width='100'>" . $row['choice_2'] . "</td>";
+echo "<th scope='col' class='choice__prefix'>C</th>";
+echo "<td align='left' class='choice__text' width='100'>" . $row['choice_3'] . "</td>";
+echo "<th scope='col' class='choice__prefix'>D</th>";
+echo "<td align='left' class='choice__text' width='100'>" . $row['choice_4'] . "</td>";
+
 echo "</tr>";}echo "</table>";?>
