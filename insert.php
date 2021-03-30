@@ -1,3 +1,4 @@
+<?php include_once 'db.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,3 +16,8 @@
     Answer is: <?php echo $_POST["answer"]; ?>  
 </body>
 </html>
+<?php
+$query = "INSERT INTO quiz (question, choice_1, choice_2, choice_3, choice_4, answer) VALUES ('$_POST[question]','$_POST[choice_1]','$_POST[choice_2]','$_POST[choice_3]','$_POST[choice_4]','$_POST[anwser]')";
+$result = pg_query($query); 
+?>
+
