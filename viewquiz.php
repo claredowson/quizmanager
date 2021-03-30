@@ -17,48 +17,37 @@
 <body>
     <div class="container">
         <div id="home" class="flex__center flex__column">
-          
-        <h1 class="title__item">What Colour is Kermit?</h1>
-            <div>
-                <div class="choice__container">
-                    <p class="choice__prefix">A</p>
-                    <p class="choice__text">Red</p>
+            <h1 class="title__item">Nature Quiz</h1>
+            <?php
+            $db = pg_connect("host=localhost port=5432 dbname=claretest");
+            $result = pg_query($db,"SELECT * FROM quiz");
+            echo "<table>";
+            echo "<thead>";
+            echo "<tr>";
+            echo "<th>Question</th>";
+            echo "<th colspan='4' class='sizing'>Multiple Choice Answers</th>";
+            echo "</tr>";
+            echo "</thead>";
+            echo "<tbody>";
+            echo "<tr>";
+            while($row=pg_fetch_assoc($result)){echo "<tr>";
+            echo "<td align='left' width='100'  class='question'>" . $row['question'] . "</td>";
+            echo "<th scope='col' class='choice__prefix'>A</th>";
+            echo "<td align='left' class='choice__text' width='100'>" . $row['choice_1'] . "</td>";
+            echo "<th scope='col' class='choice__prefix'>B</th>";
+            echo "<td align='left' class='choice__text' width='100'>" . $row['choice_2'] . "</td>";
+            echo "<th scope='col' class='choice__prefix'>C</th>";
+            echo "<td align='left' class='choice__text' width='100'>" . $row['choice_3'] . "</td>";
+            echo "<th scope='col' class='choice__prefix'>D</th>";
+            echo "<td align='left' class='choice__text' width='100'>" . $row['choice_4'] . "</td>";
+            echo "</tr>";
+            echo "</tbody>";
+            }echo "</table>";?>
+                <div>
+                    <a href="viewselection.php">View another Quiz</a>
+                    <a href="index.php">Back to login page</a>
                 </div>
-                <div class="choice__container">
-                    <p class="choice__prefix">B</p>
-                    <p class="choice__text">Pink</p>
-                </div>
-                <div class="choice__container">
-                    <p class="choice__prefix">C</p>
-                    <p class="choice__text">Green</p>
-                </div>
-                <div class="choice__container">
-                    <p class="choice__prefix">D</p>
-                    <p class="choice__text">Blue</p>
-                </div>
-            </div>
-            <div>
-                <a href="viewselection.html">View another Quiz</a>
-                <a href="index.html">Back to login page</a>
-            </div>
         </div>
     </div>
 </body>
 </html>
-<?php
-$db = pg_connect("host=localhost port=5432 dbname=claretest");
-$result = pg_query($db,"SELECT * FROM quiz");
-echo "<table>";
-echo "<th scope='col' class='choice__options'>Question</th>";
-while($row=pg_fetch_assoc($result)){echo "<tr>";
-echo "<td align='left' width='100'  class='question'>" . $row['question'] . "</td>";
-echo "<th scope='col' class='choice__prefix'>A</th>";
-echo "<td align='left' class='choice__text' width='100'>" . $row['choice_1'] . "</td>";
-echo "<th scope='col' class='choice__prefix'>B</th>";
-echo "<td align='left' class='choice__text' width='100'>" . $row['choice_2'] . "</td>";
-echo "<th scope='col' class='choice__prefix'>C</th>";
-echo "<td align='left' class='choice__text' width='100'>" . $row['choice_3'] . "</td>";
-echo "<th scope='col' class='choice__prefix'>D</th>";
-echo "<td align='left' class='choice__text' width='100'>" . $row['choice_4'] . "</td>";
-
-echo "</tr>";}echo "</table>";?>
