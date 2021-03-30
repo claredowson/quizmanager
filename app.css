@@ -96,4 +96,21 @@
       background-color: #6aa300;
       color: white;
     }
-    
+
+    ul {
+      font-size: 1.25rem;
+      padding: 15px 32px;
+      list-style: none;
+    }
+
+    #file {
+      background: ##fff;
+      border: none;
+      border-radius: 5px;
+      color: #6aa300;
+      cursor: pointer;
+      font-size: inherit;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      padding: 1rem 50px;
+    }

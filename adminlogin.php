@@ -17,12 +17,12 @@
         <div id="home" class="flex__center flex__column">
             <h1 class="title__item">Quizzes are Us</h1>
             <div>
-                <a href="resview.html">Play a Quiz</a>
-                <a href="viewselection.html">View a Quiz</a>
-                <a href="adminedit.html">Add a Question</a>
-                <a href="adminedit.html">Edit a Question</a>
-                <a href="admindelete.html">Delete a Question</a>
-                <a href="index.html">Back to login page</a>
+                <a href="resview.php">Play a Quiz</a>
+                <a href="viewselection.php">View a Quiz</a>
+                <a href="adminadd.php">Add a Question</a>
+                <a href="adminedit.php">Edit a Question</a>
+                <a href="admindelete.php">Delete a Question</a>
+                <a href="index.php">Back to login page</a>
             </div>
         </div>
     </div>
