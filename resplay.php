@@ -36,7 +36,7 @@
                     <p class="choice__prefix">D</p>
                     <p class="choice__text">The Black Hole</p>
                 </div>
-                <a href="resend.html">Temp Link</a>
+                <a href="resend.php">Temp Link</a>
             </div>
         </div>
     </div>

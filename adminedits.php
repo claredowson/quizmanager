@@ -1,3 +1,4 @@
+<?php include_once 'db.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,8 +37,8 @@
                 </div>
             </div>
             <div>
-                <a href="adminedit.html">Edit another Quiz</a>
-                <a href="adminlogin.html">Back to login page</a>
+                <a href="adminedit.php">Edit another Quiz</a>
+                <a href="adminlogin.php">Back to login page</a>
             </div>
         </div>
     </div>

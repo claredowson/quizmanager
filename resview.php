@@ -18,10 +18,10 @@
         <div id="home" class="flex__center flex__column">
             <h1 class="title__item">What Quiz do you want to play?</h1>
             <div>
-                <a href="resplay.html">General Knowledge</a>
-                <a href="resplay.html">Natural World</a>
-                <a href="resplay.html">History</a>
-                <a href="index.html">Go back to login page</a>
+                <a href="resplay.php">General Knowledge</a>
+                <a href="resplay.php">Natural World</a>
+                <a href="resplay.php">History</a>
+                <a href="index.php">Go back to login page</a>
             </div>
         </div>
     </div>

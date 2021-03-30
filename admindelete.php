@@ -1,3 +1,4 @@
+<?php include_once 'db.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,10 +18,10 @@
         <div id="home" class="flex__center flex__column">
             <h1 class="title__item">What Quiz do you want to delete questions?</h1>
             <div>
-                <a href="admindeleting.html">General Knowledge</a>
-                <a href="admindeleting.html">Natural World</a>
-                <a href="admindeleting.html">History</a>
-                <a href="adminlogin.html">Back to login page</a>
+                <a href="admindeleting.php">General Knowledge</a>
+                <a href="admindeleting.php">Natural World</a>
+                <a href="admindeleting.php">History</a>
+                <a href="adminlogin.php">Back to login page</a>
             </div>
         </div>
     </div>

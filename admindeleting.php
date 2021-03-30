@@ -1,3 +1,4 @@
+<?php include_once 'db.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,8 +22,8 @@
             <h1 class="title__item">What is another name for a feline?</h1>
             <h1 class="title__item">What animal has the longest hair?</h1>
             <div>
-                <a href="admindelete.html">Delete a question from another Quiz</a>
-                <a href="adminlogin.html">Back to login page</a>
+                <a href="admindelete.php">Delete a question from another Quiz</a>
+                <a href="adminlogin.php">Back to login page</a>
             </div>
         </div>
     </div>

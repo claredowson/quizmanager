@@ -18,9 +18,9 @@
         <div id="home" class="flex__center flex__column">
             <h1 class="title__item">Quizzes are Us</h1>
             <div>
-                <a href="resplay.html">Play again</a>
-                <a href="resview.html">Select another quiz</a>
-                <a href="index.html">Go back to login page</a>
+                <a href="resplay.php">Play again</a>
+                <a href="resview.php">Select another quiz</a>
+                <a href="index.php">Go back to login page</a>
             </div>
         </div>
     </div>

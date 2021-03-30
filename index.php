@@ -28,9 +28,9 @@
            
                 <button type="button" class="button">Submit (Not Working)</button>
            
-            <a href="adminlogin.html">Admin (Temp button)</a>
-            <a href="viewview.html">View (Temp Button)</a>
-            <a href="resview.html">Restricted (Temp Button)</a>
+            <a href="adminlogin.php">Admin (Temp button)</a>
+            <a href="viewview.php">View (Temp Button)</a>
+            <a href="resview.php">Restricted (Temp Button)</a>
         </div>
     </div>
 </body>

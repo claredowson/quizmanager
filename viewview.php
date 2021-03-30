@@ -1,3 +1,4 @@
+<?php include_once 'db.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +18,9 @@
         <div id="home" class="flex__center flex__column">
             <h1 class="title__item">Quizzes are Us</h1>
             <div>
-                <a href="viewselection.html">Play a Quiz</a>
-                <a href="viewquiz.html">View a Quiz</a>
-                <a href="index.html">Back to login page</a>
+                <a href="viewselection.php">Play a Quiz</a>
+                <a href="viewquiz.php">View a Quiz</a>
+                <a href="index.php">Back to login page</a>
             </div>
         </div>
     </div>
