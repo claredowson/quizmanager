@@ -17,9 +17,18 @@
 <body>
     <div class="container">
         <div id="home" class="flex__center flex__column">
-            <h1 class="title__item">What Colour is Kermit?</h1>
-            <h1 class="title__item">What kind of animal is Daffy?</h1>
-            <h1 class="title__item">What is another name for a feline?</h1>
+            <h1 class="title__item">Nature Quiz</h1>
+            <?php
+            $db = pg_connect("host=localhost port=5432 dbname=claretest");
+            $result = pg_query($db,"SELECT question FROM quiz"); echo "<table>";
+            echo "<tbody>";
+            echo "<tr>";
+            while($row=pg_fetch_assoc($result)){echo "<tr>";
+            echo "<td align='left' width='100'  class='question'>" . $row['question'] . "</td>";
+            echo "</tr>";
+            echo "</tbody>";
+            }echo "</table>";?>
+                <div>
             <h1 class="title__item">What animal has the longest hair?</h1>
             <div>
                 <a href="admindelete.php">Delete a question from another Quiz</a>
