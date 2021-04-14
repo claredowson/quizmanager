@@ -37,7 +37,7 @@
 <blockquote>
     <p>
     <?=htmlspecialchars($question['question'], 
-        ENT_QUOTES, 'UTF-8')?>
+        ENT_QUOTES, 'UTF-8');?>
     <form name="deletequestion" method="POST">
         <input type="hidden" name="id" value="<?=$question['id']?>">
         <input type="submit" value="Delete">
@@ -45,10 +45,12 @@
     </p>
 </blockquote>
 <?php endforeach; 
+$questions = $result;
 $id = $_POST['id'];
 $query = "DELETE FROM quiz WHERE id='$id'";
 $result = pg_query($query);
 ?>
+
             <div>
                 <a href="admindelete.php">Delete a question from another Quiz</a>
                 <a href="adminlogin.php">Back to login page</a>
