@@ -21,31 +21,25 @@
  
             <?php
             $db = pg_connect("host=localhost port=5432 dbname=claretest");
-            $result = pg_query($db,"SELECT * FROM quiz"); 
+           $result = pg_query($db,"SELECT * FROM quiz"); 
             echo "<table>";
             
             echo "<tr>";
             while($row=pg_fetch_assoc($result)) {echo "<tr>";
             echo "<td class='question'>" . $row['question'] . "</td>";
-            echo "</tr>";
-            echo "<tr>";
-            echo "<td  class='choice__prefix'>A</td>";
-            echo "<td  class='choice__text' >" . $row['choice_1'] . "</td>";
-            echo "</tr>";
-            echo "<tr>";
-            echo "<td class='choice__prefix'>B</td>";
-            echo "<td class='choice__text' >" . $row['choice_2'] . "</td>";
-            echo "</tr>";
-            echo "<tr>";
-            echo "<td class='choice__prefix'>C</td>";
-            echo "<td class='choice__text' >" . $row['choice_3'] . "</td>";
-            echo "</tr>";
-            echo "<tr>";
-            echo "<td class='choice__prefix'>D</td>";
-            echo "<td class='choice__text' >" . $row['choice_4'] . "</td>";
-            echo "</tr>";
+            echo "</tr>";?>
+
             
-            }echo "</table>";?>
+            <tr><td><input required type="radio" class="choices" value="<?php echo $row['choice_1'];?>">&nbsp;<?php echo $row['choice_1'];?><br>
+            <tr><td><input required type="radio" class="choices" value="<?php echo $row['choice_2'];?>">&nbsp;<?php echo $row['choice_2'];?><br>
+            <tr><td><input required type="radio" class="choices" value="<?php echo $row['choice_3'];?>">&nbsp;<?php echo $row['choice_3'];?><br>
+            <tr><td><input required type="radio" class="choices" value="<?php echo $row['choice_4'];?>">&nbsp;<?php echo $row['choice_4'];?><br>
+            <tr><td><button class="button" name="click" >Next</button></td></tr> <?php } 
+       
+     
+           
+            
+            echo "</table>";?>
             <h1 class="title__item">Earth is located in which galaxy?</h1>
             <div>
                 <div class="choice__container">
