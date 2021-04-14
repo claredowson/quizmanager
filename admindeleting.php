@@ -45,10 +45,11 @@
     </p>
 </blockquote>
 <?php endforeach; 
-$questions = $result;
+
 $id = $_POST['id'];
+echo $id;
 $query = "DELETE FROM quiz WHERE id='$id'";
-$result = pg_query($query);
+pg_query($query);
 ?>
 
             <div>
