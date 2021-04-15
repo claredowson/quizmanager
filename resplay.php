@@ -19,47 +19,57 @@
         <div id="home" class="flex__center flex__column">
             <h1 class="title__item">Nature Quiz</h1>
  
-            <?php
-            $db = pg_connect("host=localhost port=5432 dbname=claretest");
-           $result = pg_query($db,"SELECT * FROM quiz"); 
-            echo "<table>";
-            
-            echo "<tr>";
-            while($row=pg_fetch_assoc($result)) {echo "<tr>";
-            echo "<td class='question'>" . $row['question'] . "</td>";
-            echo "</tr>";?>
+    <?php   
+														
+	if (isset($_POST['click']) || isset($_GET['start'])) {
+		@$_SESSION['clicks'] += 1 ;
+		$c = $_SESSION['clicks'];
+		if(isset($_POST['userans'])) { $userselected = $_POST['userans'];
+																
+		$fetchqry2 = "UPDATE `quiz` SET `answer`='$userselected' WHERE `id`=$c-1"; 
+		
+		}
+		  
+																	
+ 		} else {
+			$_SESSION['clicks'] = 0;
+		}
+												
+?>
 
-            
-            <tr><td><input required type="radio" class="choices" value="<?php echo $row['choice_1'];?>">&nbsp;<?php echo $row['choice_1'];?><br>
-            <tr><td><input required type="radio" class="choices" value="<?php echo $row['choice_2'];?>">&nbsp;<?php echo $row['choice_2'];?><br>
-            <tr><td><input required type="radio" class="choices" value="<?php echo $row['choice_3'];?>">&nbsp;<?php echo $row['choice_3'];?><br>
-            <tr><td><input required type="radio" class="choices" value="<?php echo $row['choice_4'];?>">&nbsp;<?php echo $row['choice_4'];?><br>
-            <tr><td><button class="button" name="click" >Next</button></td></tr> <?php } 
+<div class="bump"><br><form><?php if($_SESSION['clicks']==0){ ?> <button class="button" name="start" ><span>START QUIZ</span></button> <?php } ?></form></div>
+<form action="" method="post">  				
+<table><?php 
+$db = pg_connect("host=localhost port=5432 dbname=claretest");
+$result = pg_query($db,"SELECT * FROM quiz");
+$row=pg_fetch_assoc($result);
+		  ?>
+       
+</h3></td></tr> <?php if($_SESSION['clicks'] > 0 && $_SESSION['clicks'] < 6){ ?>
+
+    <tr><td><h3><br><?php echo @$row['question'];?>     
+            <tr><td><input required type="radio" name="userans" class="choices" value="<?php echo $row['choice_1'];?>">&nbsp;<?php echo $row['choice_1'];?><br>
+            <tr><td><input required type="radio" name="userans" class="choices" value="<?php echo $row['choice_2'];?>">&nbsp;<?php echo $row['choice_2'];?><br>
+            <tr><td><input required type="radio" name="userans" class="choices" value="<?php echo $row['choice_3'];?>">&nbsp;<?php echo $row['choice_3'];?><br>
+            <tr><td><input required type="radio" name="userans" class="choices" value="<?php echo $row['choice_4'];?>">&nbsp;<?php echo $row['choice_4'];?><br>
+            <tr><td><button class="button" name="click" >Next</button></td></tr> <?php } ?>
        
      
-           
+       <form>
+       <?php if($_SESSION['clicks']>5){ 
+          $qry3 = "SELECT `answer`, 'userans' FROM `quiz`;";
+          $result3 = pg_query($con,$qry3);
+          $storeArray = Array();
+          while ($row3 = pg_fetch_assoc($result3)) {
+           if($row3['answer']==$row3['userans']){
+               @$_SESSION['score'] += 1 ;
+           }
+      }
+    }
+       
+       ?> 
             
-            echo "</table>";?>
-            <h1 class="title__item">Earth is located in which galaxy?</h1>
             <div>
-                <div class="choice__container">
-                    <p class="choice__prefix">A</p>
-
-                    <p class="choice__text">The Milky Way Galaxy</p>
-                </div>
-                <div class="choice__container">
-                    <p class="choice__prefix">B</p>
-                    <p class="choice__text">The Mars Galaxy</p>
-                </div>
-                <div class="choice__container">
-                    <p class="choice__prefix">C</p>
-                    <p class="choice__text">The Galaxy Note</p>
-                </div>
-                <div class="choice__container">
-                    <p class="choice__prefix">D</p>
-                    <p class="choice__text">The Black Hole</p>
-                    
-                </div>
                 <a href="resend.php">Temp Link</a>
             </div>
         </div>

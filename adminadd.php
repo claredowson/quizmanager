@@ -70,9 +70,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <li>Answer:</li>
                     <li>  
                     <select id="file" name="answer" class="answer">
-                    <option value="Choice 1" <?php if($answer=="Choice 1") {echo "selected";} ?>>Choice 1</option>
+                    <option value="Choice_1" <?php if($answer=="Choice_1") {echo "selected";} ?>>Choice 1</option>
                     <option value="Choice_2" <?php if($answer=="Choice_2") {echo "selected";} ?>>Choice 2</option>
-                    <option value="Choice_3" <?php if($answer="Choice_3") {echo "selected";} ?>>Choice 3</option>
+                    <option value="Choice_3" <?php if($answer=="Choice_3") {echo "selected";} ?>>Choice 3</option>
                     <option value="Choice_4" <?php if($answer=="Choice_4") {echo "selected";} ?>>Choice 4</option>
                 
                     </select></li>
