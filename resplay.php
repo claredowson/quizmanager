@@ -19,17 +19,13 @@ session_start(); ?>
     <div class="container">
         <div id="home" class="flex__center flex__column">
             <h1 class="title__item">Nature Quiz</h1>
+       
  
-    <?php  
-    
-    $_SESSION['clicks'] = 0;
-												
-	if (isset($_POST['click']) || isset($_GET['start'])) {
-		$_SESSION['clicks'] += 1 ;
-        
-    }
-												
-?>
+    <?php  										
+	    if (isset($_POST['click']) || isset($_GET['start'])) {
+		$_SESSION['clicks'] += 1 ; 
+        }										
+    ?>
 
 <div class="bump"><br><form><?php if($_SESSION['clicks']==0){ ?> <button class="button" name="start" ><span>START QUIZ</span></button> <?php } ?></form></div>
 <form action="" method="post">  				
@@ -51,15 +47,12 @@ $row=pg_fetch_assoc($result);
      
        <form>
        <?php if($_SESSION['clicks']>5){ 
-       
-    } 
+        $_SESSION['clicks'] = 0;
+        echo "<script> location.href='resend.php'; </script>";
+        exit;
+        } 
     ?>
-       
-       
-            
-            <div>
-                <a href="resend.php">Temp Link</a>
-            </div>
+   
         </div>
     </div>
 </body>
