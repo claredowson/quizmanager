@@ -32,16 +32,17 @@ session_start(); ?>
 <table><?php 
 $db = pg_connect("host=localhost port=5432 dbname=claretest");
 $result = pg_query($db,"SELECT * FROM quiz");
-$row=pg_fetch_assoc($result);
-		  ?>
+?>
        
-</h3></td></tr> <?php if($_SESSION['clicks'] > 0 && $_SESSION['clicks'] < 6){ ?>
+</h2></td></tr> <?php if($_SESSION['clicks'] > 0 && $_SESSION['clicks'] < 6){ 
+    $row=pg_fetch_assoc($result);
+    ?>
 
-    <tr><td><h3><br><?php echo @$row['question'];?>     
-            <tr><td><input required type="radio" class="choices" value="<?php echo $row['choice_1'];?>">&nbsp;<?php echo $row['choice_1'];?><br>
-            <tr><td><input required type="radio" class="choices" value="<?php echo $row['choice_2'];?>">&nbsp;<?php echo $row['choice_2'];?><br>
-            <tr><td><input required type="radio" class="choices" value="<?php echo $row['choice_3'];?>">&nbsp;<?php echo $row['choice_3'];?><br>
-            <tr><td><input required type="radio" class="choices" value="<?php echo $row['choice_4'];?>">&nbsp;<?php echo $row['choice_4'];?><br>
+    <tr><td><h2><br><?php echo @$row['question'];?>     
+            <tr><td><input required type="radio" name="userans" class="choices" value="<?php echo $row['choice_1'];?>">&nbsp;<?php echo $row['choice_1'];?><br>
+            <tr><td><input required type="radio" name="userans" class="choices" value="<?php echo $row['choice_2'];?>">&nbsp;<?php echo $row['choice_2'];?><br>
+            <tr><td><input required type="radio" name="userans" class="choices" value="<?php echo $row['choice_3'];?>">&nbsp;<?php echo $row['choice_3'];?><br>
+            <tr><td><input required type="radio" name="userans" class="choices" value="<?php echo $row['choice_4'];?>">&nbsp;<?php echo $row['choice_4'];?><br>
             <tr><td><button class="button" name="click">Next</button></td></tr> <?php } ?>
        
      
