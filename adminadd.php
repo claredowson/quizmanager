@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($errors)) {
             $query = "INSERT
             INTO quiz (question, choice_1, choice_2, choice_3, choice_4, answer)
-            VALUES ('$_POST[question]','$_POST[choice_1]','$_POST[choice_2]','$_POST[choice_3]','$_POST[choice_4]','$_POST[anwser]')";
+            VALUES ('$_POST[question]','$_POST[choice_1]','$_POST[choice_2]','$_POST[choice_3]','$_POST[choice_4]','$_POST[answer]')";
             $result = pg_query($query);
         }
 }
@@ -69,11 +69,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </li>
                     <li>Answer:</li>
                     <li>  
-                    <select id="file" name="answer" class="answer">
-                    <option value="Choice_1" <?php if($answer=="Choice_1") {echo "selected";} ?>>Choice 1</option>
-                    <option value="Choice_2" <?php if($answer=="Choice_2") {echo "selected";} ?>>Choice 2</option>
-                    <option value="Choice_3" <?php if($answer=="Choice_3") {echo "selected";} ?>>Choice 3</option>
-                    <option value="Choice_4" <?php if($answer=="Choice_4") {echo "selected";} ?>>Choice 4</option>
+               
+                    <select id="file" name="answer">
+                    <option value="" disabled selected>Choose option</option>
+                    <option value="Choice 1" <?php if($answer=="Choice_1") {echo "selected";} ?>>Choice 1</option>
+                    <option value="Choice 2" <?php if($answer=="Choice_2") {echo "selected";} ?>>Choice 2</option>
+                    <option value="Choice 3" <?php if($answer=="Choice_3") {echo "selected";} ?>>Choice 3</option>
+                    <option value="Choice 4" <?php if($answer=="Choice_4") {echo "selected";} ?>>Choice 4</option>
                 
                     </select></li>
                     <li><input type="submit" class="button" name="submit" value="Submit" name='Done'/></li>
