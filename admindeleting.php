@@ -47,9 +47,9 @@
 <?php endforeach; 
 
 $id = $_POST['id'];
-echo $id;
 $query = "DELETE FROM quiz WHERE id='$id'";
 pg_query($query);
+
 ?>
 
             <div>
