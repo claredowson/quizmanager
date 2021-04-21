@@ -1,6 +1,5 @@
 <?php include_once 'db.php'; 
-$db = pg_connect("host=localhost port=5432 dbname=claretest");
-$result = pg_query($db,"SELECT * FROM quiz");
+$result = pg_query($dbconn,"SELECT * FROM quiz");
 ?>
 <!DOCTYPE html>
 <html lang="en">

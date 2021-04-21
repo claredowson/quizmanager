@@ -1,4 +1,17 @@
-<?php include_once 'db.php'; ?>
+<?php include_once 'db.php'; 
+
+if(count($_POST)>0) {
+    
+    pg_query($dbconn,"UPDATE quiz set id='" . $_POST['id'] . "', question='" . $_POST['question'] . "', choice_1='" . $_POST['choice_1'] . "', choice_2='" . $_POST['choice_2'] . "' ,choice_3='" . $_POST['choice_3'] . "', choice_4='" . $_POST['choice_4'] . "', answer='" . $_POST['answer'] . "' WHERE id='" . $_POST['id'] . "'");
+    echo "$post[question]";
+$message = "Record Modified Successfully";
+}
+    
+    $result = pg_query($dbconn,"SELECT * FROM quiz WHERE id='" . $_GET['id'] . "'");
+    $row= pg_fetch_array($result);
+  
+    ?>
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,49 +27,43 @@
         <img src="images/barnardos.png" alt="Barnardos Logo" />
     </figure>
 </header>
-
-<?php
-if(count($_POST)>0) {
-pg_query($db,"UPDATE quiz set id='" . $_POST['id'] . "', question='" . $_POST['question'] . "', choice_1='" . $_POST['choice_1'] . "', choice_2='" . $_POST['choice_2'] . "' ,choice_3='" . $_POST['choice_3'] . "', choice_4='" . $_POST['choice_4'] . "', answer='" . $_POST['answer'] . "'  WHERE id='" . $_POST['id'] . "'");
-$message = "Record Modified Successfully";
-}
-$result = pg_query($db,"SELECT * FROM quiz WHERE id='" . $_GET['id'] . "'");
-$row= pg_fetch_array($result);
-?>
-
-
 <head>
     <title>Update Question Data</title>
 </head>
 <body>
-    <form name="frmUser" method="post" action="">
+<div class="container">
+        <div id="home" class="flex__center flex__column">
+            
+         
+    <form name="edit" method="POST" action="">
         <div><?php if(isset($message)) { echo $message; } ?>
         </div>
-<div style="padding-bottom:5px;">
-<a href="adminedits.php">Question List</a>
+<div>
+<a href="adminedits.php">Back to Question List</a>
 </div>
-
+<input type="hidden" name="id" value="<?php echo $row['id']; ?>">
 <br>
 Question: <br>
-<input type="text" question="question" class="txtField" value="<?php echo $row['question']; ?>">
+<input type="text" name="question" id="file" value="<?php echo htmlspecialchars($row['question']);?>"/> 
 <br>
 Choice 1 :<br>
-<input type="text" name="choice_1" class="txtField" value="<?php echo $row['choice_1']; ?>">
+<input type="text" name="choice_1" id="file" value="<?php echo htmlspecialchars($row['choice_1']);?>"/> 
 <br>
 Choice 2:<br>
-<input type="text" name="choice_2" class="txtField" value="<?php echo $row['choice_2']; ?>">
+<input type="text" name="choice_2" id="file" value="<?php echo htmlspecialchars($row['choice_2']);?>"/> 
 <br>
 Choice 3:<br>
-<input type="text" name="choice_3" class="txtField" value="<?php echo $row['choice_3']; ?>">
+<input type="text" name="choice_3" id="file" value="<?php echo htmlspecialchars($row['choice_3']);?>"/> 
 <br>
 Choice 4:<br>
-<input type="text" name="choice_4" class="txtField" value="<?php echo $row['choice_4']; ?>">
+<input type="text" name="choice_4" id="file" value="<?php echo htmlspecialchars($row['choice_4']);?>"/> 
 <br>
 Answer:<br>
-<input type="text" name="answer" class="txtField" value="<?php echo $row['answer']; ?>">
+<input type="text" name="answer" id="file" value="<?php echo htmlspecialchars($row['answer']);?>"/> 
 <br>
-<input type="submit" name="submit" value="Submit" class="buttom">
-
+<input type="submit" name="submit" value="Submit" class="button">
+</div>
+</div>
 </form>
 </body>
 </html>
