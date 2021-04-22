@@ -20,7 +20,7 @@
             <div>
                 <a href="viewquiz.php">General Knowledge</a>
                 <a href="viewquiz.php">Natural World</a>
-                <a href="viewquiz.php">History</a> 
+                <a href="historyviewquiz.php">History</a> 
                 <a href="index.php">Back to login page</a>
             </div>
         </div>
