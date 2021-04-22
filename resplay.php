@@ -33,15 +33,15 @@ LIMIT 5;");
 	}			
     									
 ?>
-<div class="bump"><br><form><?php if($_SESSION['clicks']==0){ ?> <button class="button" name="start" ><span>START QUIZ</span></button> <?php } ?></form></div>
+<div><br><form><?php if($_SESSION['clicks']==0){ ?> <button class="button" name="start" ><span>START QUIZ</span></button> <?php } ?></form></div>
 <form action="" method="post">  				
 <table>
  				
-    <tr><td><h3><br><?php echo @$row['question'];?></h3></td></tr> <?php if($_SESSION['clicks'] > 0 && $_SESSION['clicks'] < 6){ 
+    <tr><td><?php echo @$row['question'];?></td></tr> <?php if($_SESSION['clicks'] > 0 && $_SESSION['clicks'] < 6){ 
         $row = pg_fetch_assoc($result);?>
        
 
-    <tr><td><h2><?php echo $row['question'];?><br>
+    <tr><td><h3><?php echo $row['question'];?><br>
 
     <tr><td><input required type="radio" name="userans" class="choices" value="<?php echo $row['choice_1'];?>">&nbsp;<?php echo $row['choice_1'];?><br>
 
