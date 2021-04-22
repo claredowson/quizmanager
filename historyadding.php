@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (empty($errors)) {
             $query = "INSERT
-            INTO quiz (question, choice_1, choice_2, choice_3, choice_4, answer)
+            INTO history (question, choice_1, choice_2, choice_3, choice_4, answer)
             VALUES ('$_POST[question]','$_POST[choice_1]','$_POST[choice_2]','$_POST[choice_3]','$_POST[choice_4]','$_POST[answer]')";
             $result = pg_query($query);
             echo "<script> location.href='adminadd.php'</script>";
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 <div class="container">
         <div id="home" class="flex__center flex__column">
-            <h1>Enter a new question into the Nature Quiz</h1>
+            <h1>Enter a new question into the History Quiz</h1>
             <ul>
                 <form name="insert" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                     <li>Question:</li><li><input type="text" id="file" name="question" value="<?php echo htmlspecialchars($values['question']);?>"/> 
