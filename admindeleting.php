@@ -1,6 +1,5 @@
 <?php include_once 'db.php'; ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +48,6 @@
 $id = $_POST['id'];
 $query = "DELETE FROM quiz WHERE id='$id'";
 pg_query($query);
-
 ?>
 
             <div>

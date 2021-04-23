@@ -17,16 +17,17 @@
     <div class="container">
         <div id="home" class="flex__center flex__column">
             <h1 class="title__item">Welcome to Quizzes R us</h1>
+            <form action="post_login.php">
             <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
+                <p>Username: <input name="username" type="text" id="username"></p>
             </div>
             <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required> 
+                <p>Password : <input type="password" name="verysecret"
+                type="text" id="password" ></p>
             </div>
            
-                <button type="button" class="button">Submit (Not Working)</button>
+                <p><input type="submit" name="Submit" value="Login (Not Working)"></p>
+            </form>
            
             <a href="adminlogin.php">Admin (Temp button)</a>
             <a href="viewview.php">View (Temp Button)</a>
