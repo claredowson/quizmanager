@@ -1,4 +1,3 @@
-<?php include_once 'db.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,15 +16,13 @@
     <div class="container">
         <div id="home" class="flex__center flex__column">
             <h1 class="title__item">Welcome to Quizzes R us</h1>
-            <form action="post_login.php">
-            <div>
-                <p>Username: <input name="username" type="text" id="username"></p>
-            </div>
-            <div>
-                <p>Password : <input type="password" name="verysecret"
-                type="text" id="password" ></p>
-            </div>
+            <form action="post_login.php" method="post">
            
+                <p>Username: <input name="username" type="text" id="username"></p>
+           
+                <p>Password : <input type="password" name="password"
+                type="text" id="password"></p>
+      
                 <p><input type="submit" name="Submit" value="Login (Not Working)"></p>
             </form>
            
