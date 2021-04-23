@@ -2,12 +2,12 @@
 
 if(count($_POST)>0) {
     
-    pg_query($dbconn,"UPDATE quiz set id='" . $_POST['id'] . "', question='" . $_POST['question'] . "', choice_1='" . $_POST['choice_1'] . "', choice_2='" . $_POST['choice_2'] . "' ,choice_3='" . $_POST['choice_3'] . "', choice_4='" . $_POST['choice_4'] . "', answer='" . $_POST['answer'] . "' WHERE id='" . $_POST['id'] . "'");
+    pg_query($dbconn,"UPDATE history set id='" . $_POST['id'] . "', question='" . $_POST['question'] . "', choice_1='" . $_POST['choice_1'] . "', choice_2='" . $_POST['choice_2'] . "' ,choice_3='" . $_POST['choice_3'] . "', choice_4='" . $_POST['choice_4'] . "', answer='" . $_POST['answer'] . "' WHERE id='" . $_POST['id'] . "'");
     echo "$post[question]";
-    echo "<script> location.href='adminedits.php'</script>";
+    echo "<script> location.href='historyedits.php'</script>";
 }
     
-    $result = pg_query($dbconn,"SELECT * FROM quiz WHERE id='" . $_GET['id'] . "'");
+    $result = pg_query($dbconn,"SELECT * FROM history WHERE id='" . $_GET['id'] . "'");
     $row= pg_fetch_array($result);
   
     ?>
@@ -39,7 +39,7 @@ if(count($_POST)>0) {
         <div><?php if(isset($message)) { echo $message; } ?>
         </div>
 <div>
-<a href="adminedits.php">Back to Question List</a>
+<a href="historyedits.php">Back to Question List</a>
 </div>
 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
 <br>

@@ -1,5 +1,5 @@
 <?php include_once 'db.php'; 
-$result = pg_query($dbconn,"SELECT * FROM quiz");
+$result = pg_query($dbconn,"SELECT * FROM history");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +22,7 @@ if (pg_num_rows($result) > 0) {
 ?>
 <div class="container">
     <div id="home" class="flex__center flex__column">
-        <h1 class="title__item">Nature Quiz</h1>
+        <h1 class="title__item">History Quiz</h1>
         
         <table>
             <?php
@@ -33,7 +33,7 @@ if (pg_num_rows($result) > 0) {
             
 	        <tr><td> 
             <?php echo $row["question"]; ?></td>
-		        <td><a href="update-process.php?id=<?php echo $row["id"]; ?>">Edit</a></td>
+		        <td><a href="hisupdate-process.php?id=<?php echo $row["id"]; ?>">Edit</a></td>
             </tr>
            
             <?php

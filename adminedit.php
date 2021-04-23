@@ -20,7 +20,7 @@
             <div>
                 <a href="adminedits.php">General Knowledge</a>
                 <a href="adminedits.php">Natural World</a>
-                <a href="adminedits.php">History</a>
+                <a href="historyedits.php">History</a>
                 <a href="adminlogin.php">Back to login page</a>
             </div>
         </div>

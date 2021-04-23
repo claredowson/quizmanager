@@ -139,3 +139,16 @@
       text-align: center;
       width: 100%;
     }
+
+    input[type="submit"] {
+      border: solid;
+      color: #6aa300;
+      cursor: pointer;
+      display: block;
+      font-size: 1.5rem;
+      padding: 15px 32px;
+      text-align: center;
+      margin: 2px 1px;
+      max-width: 500px;
+      width: 100%;
+    }
