@@ -1,10 +1,11 @@
-<?php include_once 'db.php'; 
+<?php include_once 'db.php';
+ob_start(); 
+  session_start();
 
 $db = pg_connect("host=localhost port=5432 dbname=claretest");
  
 $username=$_POST['username'];
 $password=$_POST['password'];
-echo "$username";
 
 $username = stripslashes($username);
 $password = stripslashes($password);
@@ -17,15 +18,16 @@ $result =pg_query($query);
 $count=pg_num_rows($result);
 
 if($count==1){
-    session_start();
+    
     $_SESSION['Username']=$username;
     while ($result_ar = pg_fetch_assoc($result)) {
-        $_SESSION["Role"]= $result_ar['Role'];
-    }
-    header("location:login_success.php");
-    }
-    else {
-        echo "Wrong Username or password";
-    }
+        $_SESSION["role"]=$result_ar['role'];
+        }
+            header("location:login_success.php");
+        }
+        else {
+            echo "Wrong Username or password";
+        }
+
 
 ?>
