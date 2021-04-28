@@ -34,15 +34,15 @@ if (isset($_POST['id'])) {
             echo "<tr>";
             while($row=pg_fetch_assoc($result)){ ?>
             
-               <tr>
-               <th> <?php echo $row['question'] ?> </th>
-               <td>
+            <tr>
+                <th> <?php echo $row['question'] ?> </th>
+                <td>
                    <form method="post" action=" <?php htmlspecialchars(   $_SERVER["PHP_SELF"]) ?> ">
-                    <input type='hidden' name='id' value='<?php echo $row["id"] ?>'>
-                    <button type='submit' name='delete'>Delete</button>
+                        <input type='hidden' name='id' value='<?php echo $row["id"] ?>'>
+                        <button type='submit' class='button' name='delete'>Delete</button>
                     </form>
                 </td> 
-                </tr>
+            </tr>
             <?php } ?>
             </table> 
          
