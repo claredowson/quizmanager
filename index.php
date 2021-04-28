@@ -27,8 +27,7 @@
             </form>
            
             <a href="adminlogin.php">Admin (Temp button)</a>
-            <a href="viewview.php">View (Temp Button)</a>
-            <a href="resview.php">Restricted (Temp Button)</a>
+            
         </div>
     </div>
 </body>

@@ -1,5 +1,11 @@
 <?php include_once 'db.php'; ?>
-
+<?php
+if (isset($_POST['id'])) {
+    $id = $_POST['id'];
+    $query = "DELETE FROM quiz WHERE id='$id'";
+    pg_query($query);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,31 +25,27 @@
     <div class="container">
         <div id="home" class="flex__center flex__column">
             <h1 class="title__item">Nature Quiz</h1>
-
+            
           
             <?php 
             $db = pg_connect("host=localhost port=5432 dbname=claretest");
-            $result = pg_query($db,"SELECT id, question FROM quiz"); 
+            $result = pg_query($db,"SELECT * FROM quiz"); 
             echo "<table>";
             echo "<tr>";
-            while($row=pg_fetch_assoc($result)){ echo "<tr>";
-               echo "<th>" . $row['question'] . "</th>";
-               echo "<td>" . " <input type='submit' class='button' name='Delete' value='Delete'  /></td>";
-               echo "</tr>";
-            }echo"</table>"; ?>
+            while($row=pg_fetch_assoc($result)){ ?>
             
-        
-     
-            <form name="delete" method="POST" action="">
-       
-                <?php
-                $id = $_POST['id'];
-                $query = "DELETE FROM quiz WHERE id='$id'";
-                pg_query($query);
-                ?>
-            </form>
-
-
+               <tr>
+               <th> <?php echo $row['question'] ?> </th>
+               <td>
+                   <form method="post" action=" <?php htmlspecialchars(   $_SERVER["PHP_SELF"]) ?> ">
+                    <input type='hidden' name='id' value='<?php echo $row["id"] ?>'>
+                    <button type='submit' name='delete'>Delete</button>
+                    </form>
+                </td> 
+                </tr>
+            <?php } ?>
+            </table> 
+         
             <div>
                 <a href="admindelete.php">Delete a question from another Quiz</a>
                 <a href="adminlogin.php">Back to login page</a>

@@ -4,15 +4,13 @@ ob_start();
 
 $db = pg_connect("host=localhost port=5432 dbname=claretest");
  
-$username=$_POST['username'];
-$password=$_POST['password'];
+$username = $_POST['username'];
+$password = $_POST['password'];
 
-$username = stripslashes($username);
-$password = stripslashes($password);
-$username = pg_escape_string($username);
-$password = pg_escape_string($password);
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+var_dump($hashed_password);
 
-$query="SELECT * FROM users WHERE username='$username' and password='$password'";
+$query="SELECT * FROM users WHERE username='$username' and password='$hashed_password'";
 $result =pg_query($query);
 
 $count=pg_num_rows($result);
