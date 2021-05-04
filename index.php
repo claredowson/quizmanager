@@ -23,11 +23,8 @@
                 <p>Password : <input type="password" name="password"
                 type="text" id="password"></p>
       
-                <p><input type="submit" name="Submit" value="Login (Not Working)"></p>
+                <p><input type="submit" name="Submit" value="Login"></p>
             </form>
-           
-            <a href="adminlogin.php">Admin (Temp button)</a>
-            
         </div>
     </div>
 </body>
