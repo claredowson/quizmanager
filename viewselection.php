@@ -18,7 +18,7 @@
         <div id="home" class="flex__center flex__column">
             <h1 class="title__item">What Quiz do you want to view?</h1>
             <div>
-                <a href="viewquiz.php">General Knowledge</a>
+                <a href="generalquiz.php">General Knowledge</a>
                 <a href="viewquiz.php">Natural World</a>
                 <a href="historyviewquiz.php">History</a> 
                 <a href="index.php">Back to login page</a>

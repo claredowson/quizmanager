@@ -18,8 +18,8 @@
         <div id="home" class="flex__center flex__column">
             <h1 class="title__item">Quizzes are Us</h1>
             <div>
-                <a href="viewselection.php">Play a Quiz</a>
-                <a href="viewquiz.php">View a Quiz</a>
+                <a href="resview.php">Play a Quiz</a>
+                <a href="viewselection.php">View a Quiz</a>
                 <a href="index.php">Back to login page</a>
             </div>
         </div>
