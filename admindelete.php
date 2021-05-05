@@ -18,7 +18,7 @@
         <div id="home" class="flex__center flex__column">
             <h1 class="title__item">What Quiz do you want to delete questions?</h1>
             <div>
-                <a href="admindeleting.php">General Knowledge</a>
+                <a href="generaldeleting.php">General Knowledge</a>
                 <a href="admindeleting.php">Natural World</a>
                 <a href="historydeleting.php">History</a>
                 <a href="adminlogin.php">Back to login page</a>
