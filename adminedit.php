@@ -18,7 +18,7 @@
         <div id="home" class="flex__center flex__column">
             <h1 class="title__item">What Quiz do you want to edit questions?</h1>
             <div>
-                <a href="adminedits.php">General Knowledge</a>
+                <a href="generaledits.php">General Knowledge</a>
                 <a href="adminedits.php">Natural World</a>
                 <a href="historyedits.php">History</a>
                 <a href="adminlogin.php">Back to login page</a>

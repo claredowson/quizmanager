@@ -18,7 +18,7 @@
         <div id="home" class="flex__center flex__column">
             <h1 class="title__item">What Quiz do you want to add a question too?</h1>
             <div>
-                <a href="adminadding.php">General Knowledge</a>
+                <a href="generaladding.php">General Knowledge</a>
                 <a href="adminadding.php">Natural World</a>
                 <a href="historyadding.php">History</a>
                 <a href="adminlogin.php">Back to login page</a>
