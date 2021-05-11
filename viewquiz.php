@@ -35,12 +35,25 @@
             echo "<th scope='col' class='choice__prefix'>A</th>";
             echo "<td align='left' class='choice__text' width='100'>" . $row['choice_1'] . "</td>";
             echo "<th scope='col' class='choice__prefix'>B</th>";
-            echo "<td align='left' class='choice__text' width='100'>" . $row['choice_2'] . "</td>";
+         
+            if($row['answer']=='Choice 2') 
+            {
+            echo "<td align='left' class='choice__text' width='100' style='background-color: blue;'>".$row['choice_2']."</td>";
+                }
+                else
+                {
+                echo "<td align='left' class='choice__text' width='100';'>".$row['choice_2']."</td>";
+            }
+     
+           
             echo "<th scope='col' class='choice__prefix'>C</th>";
             echo "<td align='left' class='choice__text' width='100'>" . $row['choice_3'] . "</td>";
             echo "<th scope='col' class='choice__prefix'>D</th>";
             echo "<td align='left' class='choice__text' width='100'>" . $row['choice_4'] . "</td>";
-            echo "</tr>";
+            
+         
+            
+            echo "</tr>"; 
             echo "</tbody>";
             }echo "</table>";?>
                 <div>
