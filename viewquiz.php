@@ -36,7 +36,7 @@
 
             if($row['answer']=='Choice 1') 
             {
-            echo "<td align='left' class='choice__text' width='100' style='background-color: #33FFC5;'>".$row['choice_1']."</td>";
+            echo "<td align='left' class='choice__answer' width='100' style='background-color: #6aa300;'>".$row['choice_1']."</td>";
                 }
                 else
                 {
@@ -47,7 +47,7 @@
          
             if($row['answer']=='Choice 2') 
             {
-            echo "<td align='left' class='choice__text' width='100' style='background-color: #33FFC5;'>".$row['choice_2']."</td>";
+            echo "<td align='left' class='choice__answer' width='100' style='background-color: #6aa300;'>".$row['choice_2']."</td>";
                 }
                 else
                 {
@@ -58,7 +58,7 @@
 
             if($row['answer']=='Choice 3') 
             {
-            echo "<td align='left' class='choice__text' width='100' style='background-color: #33FFC5;'>".$row['choice_3']."</td>";
+            echo "<td align='left' class='choice__answer' width='100' style='background-color: #6aa300;'>".$row['choice_3']."</td>";
                 }
                 else
                 {
@@ -69,13 +69,13 @@
 
             if($row['answer']=='Choice 4') 
             {
-            echo "<td align='left' class='choice__text' width='100' style='background-color: #33FFC5;'>".$row['choice_4']."</td>";
+            echo "<td align='left' class='choice__answer' width='100' style='background-color: #6aa300;'>".$row['choice_4']."</td>";
                 }
                 else
                 {
                 echo "<td align='left' class='choice__text' width='100';'>".$row['choice_4']."</td>";}
            
-            
+    
             echo "</tr>"; 
             echo "</tbody>";
             }echo "</table>";?>
